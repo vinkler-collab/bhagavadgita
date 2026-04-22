@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt Bhagavadgíta</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div style="padding: 20px;">
@@ -13,18 +16,9 @@
         <button onclick="setTheme('sand')">Sand</button>
         <button onclick="setTheme('dark')">Dark</button>
 
-        <h1>Bhagavadgíta - Ukázka</h1>
-        
-        <div class="analysis-container">
-            <div class="analysis-header" onclick="toggleAnalysis()">
-                <span>Komentáře a analýza</span>
-                <span id="analysis-arrow">▼</span>
-            </div>
-            <div id="analysis-content" class="analysis-content">
-                <p>Toto je <strong>testovací text</strong> v šuplíku analýzy.</p>
-                <p>Všimni si, že okraje jsou dokonale zarovnané bez zdvojených čar.</p>
-            </div>
-        </div>
+        <!-- Tento "kontejner" je jako prázdná nástěnka, na kterou 
+             skript automaticky připíchne text verše z JSONu. -->
+        <div id="content-container"></div>
     </div>
     <script src="script.js"></script>
 </body>

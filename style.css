@@ -1,18 +1,20 @@
-/* Základní nastavení pro analýzu */
+/* ==========================================================================
+   1. ZÁKLADNÍ LAYOUT A FIXY (Společné pro všechny režimy)
+   ========================================================================== */
+
+/* Fix okrajů v šuplíku analýzy pro eliminaci zdvojených čar */
+.analysis-container .analysis-header, 
+.analysis-container .analysis-content { 
+    margin: 0 !important; 
+}
+
 .analysis-container {
     display: block;
     margin: 15px 0;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: #f1f3f4;
-    transition: background 0.2s;
     overflow: hidden;
-}
-
-/* FIX: Definitivní odstranění zdvojených čar a mezer */
-.analysis-container .analysis-header, 
-.analysis-container .analysis-content { 
-    margin: 0 !important; 
+    transition: background 0.2s;
 }
 
 .analysis-header {
@@ -26,28 +28,67 @@
 
 .analysis-content {
     padding: 20px;
-    display: none; /* Schováno do kliknutí */
-    background: #ffffff;
+    display: none; /* Skryto do kliknutí */
     border-top: 1px solid #ddd !important;
     line-height: 1.4 !important;
 }
 
-/* Kompaktní text v analýze */
+/* Kompaktní text uvnitř šuplíku */
 .analysis-container p {
     margin-top: 0px !important;
     margin-bottom: 2px !important;
 }
 
-/* BAREVNÉ REŽIMY */
-/* --- 1. Light (Výchozí) --- */
+/* GLOBÁLNÍ FORMÁTOVÁNÍ SLOVÍČEK (strong/b)
+   Zde definujeme, že zvýrazněná slova nebudou tučná */
+strong, b {
+    font-weight: normal !important; 
+}
+
+/* ==========================================================================
+   2. BAREVNÉ REŽIMY (Light, Sand, Dark)
+   ========================================================================== */
+
+body {
+    font-family: 'Gentium Book Plus', serif; /* Nastavení tvého vybraného písma */
+    line-height: 1.6; /* Pro lepší čitelnost textu */
+}
+
+/* --- A. LIGHT (Denní režim - Výchozí) --- */
+body:not(.dark-mode):not(.sand-mode) { background-color: #ffffff; color: #333; }
+
+/* Barvy šuplíku v Light */
 body:not(.dark-mode):not(.sand-mode) .analysis-container { background-color: #f0f2f5 !important; }
+body:not(.dark-mode):not(.sand-mode) .analysis-content { background-color: transparent !important; }
 
-/* --- 2. Sand (Kafe) --- */
+/* Barva slovíček v Light (Tmavě červená) */
+body:not(.dark-mode):not(.sand-mode) strong,
+body:not(.dark-mode):not(.sand-mode) b { color: #a52a2a !important; }
+
+
+/* --- B. SAND (Režim Kafe / Pískový) --- */
 body.sand-mode { background-color: #f4ecd8 !important; color: #4a3b32 !important; }
-body.sand-mode .analysis-container { background-color: #e3d5be !important; border-color: #d4c2a5 !important; }
-body.sand-mode .analysis-container strong { color: #8b4513; } /* Hnědé zvýraznění */
 
-/* --- 3. Dark (Tma) --- */
+/* Barvy šuplíku v Sand */
+body.sand-mode .analysis-container { background-color: #e3d5be !important; border-color: #d4c2a5 !important; }
+body.sand-mode .analysis-content { background-color: transparent !important; }
+
+/* Barva slovíček v Sand (Hnědá) [2] */
+body.sand-mode strong,
+body.sand-mode b { color: #8b4513 !important; }
+
+
+/* --- C. DARK (Tmavý režim) --- */
 body.dark-mode { background-color: #33302d !important; color: #e6e2dd !important; }
-body.dark-mode .analysis-container { background: #262422 !important; border-color: #5d5650 !important; }
-body.dark-mode .analysis-container strong { color: #ff9da6; } /* Růžové zvýraznění */
+
+/* Barvy šuplíku v Dark [3] */
+body.dark-mode .analysis-container { border-color: #5d5650 !important; background: #262422 !important; }
+body.dark-mode .analysis-content { 
+    background-color: #262422 !important; 
+    color: #e6e2dd !important; 
+    border-top-color: #5d5650 !important;
+}
+
+/* Barva slovíček v Dark (Jemně růžová) [3] */
+body.dark-mode strong,
+body.dark-mode b { color: #ff9da6 !important; }
