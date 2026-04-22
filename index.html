@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt Bhagavadgíta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="padding: 20px;">
+        <!-- Tlačítka pro test režimů -->
+        <button onclick="setTheme('light')">Light</button>
+        <button onclick="setTheme('sand')">Sand</button>
+        <button onclick="setTheme('dark')">Dark</button>
+
+        <h1>Bhagavadgíta - Ukázka</h1>
+        
+        <div class="analysis-container">
+            <div class="analysis-header" onclick="toggleAnalysis()">
+                <span>Komentáře a analýza</span>
+                <span id="analysis-arrow">▼</span>
+            </div>
+            <div id="analysis-content" class="analysis-content">
+                <p>Toto je <strong>testovací text</strong> v šuplíku analýzy.</p>
+                <p>Všimni si, že okraje jsou dokonale zarovnané bez zdvojených čar.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

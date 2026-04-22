@@ -1,0 +1,53 @@
+/* Základní nastavení pro analýzu */
+.analysis-container {
+    display: block;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f1f3f4;
+    transition: background 0.2s;
+    overflow: hidden;
+}
+
+/* FIX: Definitivní odstranění zdvojených čar a mezer */
+.analysis-container .analysis-header, 
+.analysis-container .analysis-content { 
+    margin: 0 !important; 
+}
+
+.analysis-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.analysis-content {
+    padding: 20px;
+    display: none; /* Schováno do kliknutí */
+    background: #ffffff;
+    border-top: 1px solid #ddd !important;
+    line-height: 1.4 !important;
+}
+
+/* Kompaktní text v analýze */
+.analysis-container p {
+    margin-top: 0px !important;
+    margin-bottom: 2px !important;
+}
+
+/* BAREVNÉ REŽIMY */
+/* --- 1. Light (Výchozí) --- */
+body:not(.dark-mode):not(.sand-mode) .analysis-container { background-color: #f0f2f5 !important; }
+
+/* --- 2. Sand (Kafe) --- */
+body.sand-mode { background-color: #f4ecd8 !important; color: #4a3b32 !important; }
+body.sand-mode .analysis-container { background-color: #e3d5be !important; border-color: #d4c2a5 !important; }
+body.sand-mode .analysis-container strong { color: #8b4513; } /* Hnědé zvýraznění */
+
+/* --- 3. Dark (Tma) --- */
+body.dark-mode { background-color: #33302d !important; color: #e6e2dd !important; }
+body.dark-mode .analysis-container { background: #262422 !important; border-color: #5d5650 !important; }
+body.dark-mode .analysis-container strong { color: #ff9da6; } /* Růžové zvýraznění */
